@@ -69,3 +69,5 @@ RUN cd /llvm-project && \
         /var/lib/apt/lists/* \
         /var/cache/apt/pkgcache.bin \
         /var/cache/apt/srcpkgcache.bin
+
+ENV PATH /usr/local/apple-clang/bin:${PATH}
