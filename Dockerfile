@@ -39,31 +39,35 @@ RUN cd /llvm-project && \
         -DLLVM_ENABLE_LIBPFM=OFF \
         -DLLVM_ENABLE_DIA_SDK=OFF && \
     cmake --build build
-# RUN update-alternatives --set c++ /usr/local/apple-clang/bin/clang++ && \
-#     update-alternatives --set cc /usr/local/apple-clang/bin/clang && \
-#     apt-get remove --autoremove -y \
-#         ca-certificates \
-#         clang \
-#         cmake \
-#         file \
-#         git \
-#         libgcc-10-dev \
-#         libgmp-dev \
-#         libmpc-dev \
-#         libmpfr-dev \
-#         libssl-dev \
-#         libstdc++-10-dev \
-#         libxml2-dev \
-#         lzma-dev \
-#         ninja-build \
-#         python \
-#         python3 \
-#         unzip \
-#         wget \
-#         zlib1g-dev && \
-# 	rm -rf \
-#         /master.zip \
-#         /llvm-project \
-#         /var/lib/apt/lists/* \
-#         /var/cache/apt/pkgcache.bin \
-#         /var/cache/apt/srcpkgcache.bin
+RUN cd /llvm-project && \
+    cmake --install build --prefix /usr/local/apple-clang && \
+    update-alternatives --install /usr/bin/c++ c++ /usr/local/apple-clang/bin/clang++ 100 && \
+    update-alternatives --install /usr/bin/cc cc /usr/local/apple-clang/bin/clang 100 && \
+    update-alternatives --set c++ /usr/local/apple-clang/bin/clang++ && \
+    update-alternatives --set cc /usr/local/apple-clang/bin/clang && \
+    apt-get remove --autoremove -y \
+        ca-certificates \
+        clang \
+        cmake \
+        file \
+        git \
+        libgcc-10-dev \
+        libgmp-dev \
+        libmpc-dev \
+        libmpfr-dev \
+        libssl-dev \
+        libstdc++-10-dev \
+        libxml2-dev \
+        lzma-dev \
+        ninja-build \
+        python \
+        python3 \
+        unzip \
+        wget \
+        zlib1g-dev && \
+	rm -rf \
+        /master.zip \
+        /llvm-project \
+        /var/lib/apt/lists/* \
+        /var/cache/apt/pkgcache.bin \
+        /var/cache/apt/srcpkgcache.bin
