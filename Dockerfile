@@ -63,10 +63,8 @@ RUN cd /llvm-project && \
         python \
         python3 \
         unzip \
-        wget \
         zlib1g-dev && \
 	rm -rf \
-        /master.zip \
         /llvm-project \
         /var/lib/apt/lists/* \
         /var/cache/apt/pkgcache.bin \
