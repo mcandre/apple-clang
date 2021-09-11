@@ -3,6 +3,7 @@ ENV PATH /usr/local/apple-clang/bin:${PATH}
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+        binutils \
         build-essential \
         ca-certificates \
         clang \
@@ -53,7 +54,6 @@ RUN apt-get update && \
         cmake \
         file \
         git \
-        libgcc-10-dev \
         libgmp-dev \
         libmpc-dev \
         libmpfr-dev \
