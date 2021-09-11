@@ -4,7 +4,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         binutils \
-        build-essential \
         ca-certificates \
         clang \
         cmake \
@@ -21,7 +20,6 @@ RUN apt-get update && \
         ninja-build \
         python \
         python3 \
-        unzip \
         zlib1g-dev && \
     update-alternatives --set c++ /usr/bin/clang++ && \
     update-alternatives --set cc /usr/bin/clang && \
@@ -48,7 +46,6 @@ RUN apt-get update && \
     update-alternatives --set c++ /usr/local/apple-clang/bin/clang++ && \
     update-alternatives --set cc /usr/local/apple-clang/bin/clang && \
     apt-get remove --autoremove --purge -y \
-        build-essential \
         ca-certificates \
         clang \
         cmake \
@@ -63,7 +60,6 @@ RUN apt-get update && \
         ninja-build \
         python \
         python3 \
-        unzip \
         zlib1g-dev && \
 	rm -rf \
         /var/lib/apt/lists/* \
