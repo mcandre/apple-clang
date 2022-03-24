@@ -1,5 +1,9 @@
 # mcandre/apple-clang: a Docker image with Apple Clang
 
+# DEPRECATED
+
+[snek](https://github.com/mcandre/snek) no longer relies on Apple clang to enable Darwin targets in osxcross.
+
 # EXAMPLE
 
 ```console
